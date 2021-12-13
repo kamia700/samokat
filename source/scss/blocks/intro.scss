@@ -1,0 +1,45 @@
+.intro__wrap {
+  position: relative;
+  margin-top: 80px;
+}
+
+.intro__text {
+  font-size: 36px;
+  width: 510px;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  line-height: 100%;
+  font-weight: 900;
+  letter-spacing: normal;
+  padding-bottom: 32px;
+}
+
+
+@media (max-width: $tablet-width) {
+  .intro__wrap {
+    min-height: 550px;
+  }
+ }
+
+@media (max-width: $mobile-width) {
+  .intro__wrap {
+    min-height: 430px;
+  }
+
+  .intro__text {
+    font-size: calc(22px + 24 * ((100vw - 320px) / 1140));
+    width: 80%;
+  }
+ }
+
+
+ @media (max-width: 450px) {
+  .intro__wrap {
+    min-height: 350px;
+  }
+
+  .intro__text {
+    width: 90%;
+  }
+}

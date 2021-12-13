@@ -1,0 +1,18 @@
+.slider__wrap.container {
+  width: 100%;
+  max-width: 1140px;
+  padding-top: 128px;
+}
+
+.slider__wrap {
+  z-index: 5;
+}
+
+@media (max-width: $mobile-width) {
+  .slider.container {
+    width: 100%;
+    max-width: none;
+    padding: 0 17px;
+    padding-top: 128px;
+  }
+}

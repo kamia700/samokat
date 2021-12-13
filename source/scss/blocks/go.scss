@@ -1,0 +1,24 @@
+.go__wrap {
+  padding-top: 36px;
+}
+
+.go__btn {
+  font-size: 40px;
+  width: 100%;
+  padding: 41px 64px 50px;
+  text-align: center;
+  border-radius: 56px;
+  height: auto;
+}
+
+.go__btn p {
+  margin: 0ch;
+}
+
+@media (max-width: $mobile-width) {
+  .go__btn {
+    font-size: calc(40px + 45 * ((100vw - 768px) / 1140));
+    padding: 25px 30px 25px;
+  }
+
+}

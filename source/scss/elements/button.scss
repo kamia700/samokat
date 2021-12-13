@@ -1,0 +1,23 @@
+.btn {
+  background: #21201f;
+  color: #fff;
+  padding: 4px 51px;
+  line-height: 38px;
+  font-size: 20px;
+  height: 50px;
+  border: none;
+}
+
+.btn:hover {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.btn:active {
+  background: rgb(14, 30, 37);
+}
+
+@media (max-width: $mobile-width) {
+  .btn {
+    padding: 4px 21px;
+  }
+ }
