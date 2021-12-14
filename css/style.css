@@ -243,7 +243,9 @@ img {
   .header__nav {
     display: none; }
   .header__btn-wrap {
-    margin-left: 10px; } }
+    margin-left: 10px; }
+  .header__logo-link {
+    min-width: 130px; } }
 
 .intro__wrap {
   position: relative;
