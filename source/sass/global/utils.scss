@@ -1,0 +1,126 @@
+.wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* stylelint-disable-next-line */
+  min-height: calc(100 * var(--vh, 1vh));
+  overflow: hidden;
+
+  &--no-scrollbar {
+    height: 100vh;
+    /* stylelint-disable-next-line */
+    height: calc(100 * var(--vh, 1vh));
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .header,
+  .footer {
+    flex-shrink: 0;
+  }
+
+  main {
+    flex-grow: 1;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+
+  clip: rect(0 0 0 0);
+}
+
+.no-transition {
+  /* stylelint-disable-next-line */
+  transition: none !important;
+}
+
+.rouble {
+  font-family: $font-family--rouble;
+  /* stylelint-disable */
+  text-transform: lowercase !important;
+  font-weight: 400 !important;
+  /* stylelint-enable */
+}
+
+.scroll-lock-ios {
+  position: fixed;
+
+  overflow: hidden;
+}
+
+.scroll-lock {
+  overflow: hidden;
+}
+
+.error.active {
+  opacity: 1;
+}
+
+.error svg {
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  background-color: $error;
+}
+
+// используйте для скрытия нежелательных анимаций-скачков при поворотах экрана
+@keyframes disableBreakpointAnimation {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+
+/* стили для кастомных сообщений об ошибке */
+.error {
+  color: $white;
+  background-color: $error;
+
+  width: 100%;
+  height: auto;
+  position: absolute;
+
+  inset: auto auto -60% auto;
+  transform: translateY(60%);
+  opacity: 0;
+  display: block;
+  z-index: 1400;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 20px;
+  padding: 5px 11px;
+}
+
+.error.active {
+  opacity: 1;
+}
+
+.error svg {
+  height: 10px;
+  width: 10px;
+  position: absolute;
+  left: 50%;
+  top: -10px;
+  background-color: $error;
+}

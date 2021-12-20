@@ -1,0 +1,29 @@
+.navigation-menu__wrap {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.navigation-menu__item {
+  margin-right: 16px;
+  font-weight: 600;
+}
+
+.navigation-menu__item:nth-child(4n) {
+  margin-right: 0;
+}
+
+.navigation-menu__link {
+  touch-action: manipulation;
+  outline: 0;
+  word-wrap: break-word;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  white-space: nowrap;
+  cursor: pointer;
+}

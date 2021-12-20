@@ -1,0 +1,55 @@
+// Colors
+//---------------------------------
+// https://www.htmlcsscolor.com/hex/334482
+
+// Default
+
+$color-default-black:             #000000;
+$color-default-white:             #ffffff;
+$color-transparent:               rgba(255, 255, 255, 0);
+
+// Base
+
+$text: #21201f;
+$bg-main: #ffde40;
+$white: #fff;
+$plus: #000;
+$placeholder: #999;
+$submit: #252525;
+$error: #ff8786;
+
+// Gradient
+
+$black-to-right:                    linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 75%);
+
+// Typography
+//---------------------------------
+
+$font-family--placeholder:          "", "Arial", sans-serif;
+$font-extra:                        "Yandex Sans Text", "Arial", sans-serif;
+
+
+// https://www.artlebedev.ru/kovodstvo/sections/159/
+$font-family--rouble:               "Rouble", "Arial", sans-serif;
+
+// Animation
+//---------------------------------
+
+$trans--300:                        0.3s ease;
+$trans--600:                        0.6s cubic-bezier(0.55, 0, 0.1, 1);
+
+// Viewports
+//---------------------------------
+$vp--450-1:                           450px;
+// $vp--375-1:                           375px;
+$vp--768-1:                           768px;
+$vp--1024-1:                          1024px;
+// $vp--1280-1:                          1280px;
+$vp--1440-1:                          1440px;
+// $vp--1920-1:                          1920px;
+
+// Retina
+//---------------------------------
+
+$retina-dpi:                        144dpi;
+$retina-dppx:                       1.5dppx;

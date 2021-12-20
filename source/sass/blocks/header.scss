@@ -1,0 +1,84 @@
+.header__wrap.container {
+  max-width: 1140px;
+}
+
+.header {
+  position: fixed;
+  z-index: 1001;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 70px;
+  background-color: $bg-main;
+}
+
+.header__wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header__logo {
+  display: flex;
+  align-items: center;
+  line-height: 24px;
+}
+
+.header__logo-link {
+  margin: 10px 0;
+  line-height: 0;
+  min-width: 158px;
+}
+
+.header__nav {
+  padding: 0 41px 0 0;
+  padding-left: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px;
+  flex-grow: 1;
+  line-height: 30px;
+}
+
+.header__btn {
+  text-align: right;
+  white-space: nowrap;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.header__btn-wrap {
+  margin: 12px 0;
+  line-height: 17px;
+  vertical-align: middle;
+  display: inline-block;
+  border-radius: 18px;
+}
+
+.header__btn-wrap a{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 38px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.header__btn-text {
+  color: $white;
+  text-align: center;
+}
+
+@include vp--1023 {
+  .header__nav {
+    display: none;
+  }
+  .header__btn-wrap {
+    margin-left: 10px;
+  }
+
+  .header__logo-link {
+    min-width: 130px;
+  }
+}

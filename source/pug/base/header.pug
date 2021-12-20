@@ -1,0 +1,38 @@
+mixin header(headerMods, currentPage)
+  -
+    var headerLinks = [
+      {
+        href: "#rent",
+        text: "Как арендовать самокат"
+      },
+      {
+        href: "#gently",
+        text: "Катайтесь нежно"
+      },
+      {
+        href: "#plus",
+        text: "Катайтесь с Плюсом"
+      },
+      {
+        href: "#where",
+        text: "Где самокаты?"
+      },
+    ]
+
+  header.header#d-header(class=headerMods)
+    .header__wrap.container
+      .header__logo
+        a.header__logo-link(href="#", aria-label="Переход на главную")
+          img(src="https://avatars.mds.yandex.net/get-lpc/1531919/7ee2c95f-ff26-4edc-a76f-fcaba798fc37/orig" width="158" height="45" alt="Логотип проекта")
+      nav.header__nav.navigation-menu
+        ul.navigation-menu__wrap
+          each link, index in headerLinks
+            li.navigation-menu__item
+              if(index === currentPage)
+                a.navigation-menu__link.active=link.text
+              else
+                a.navigation-menu__link(href=link.href)=link.text
+      .header__btn
+        .header__btn-wrap.btn
+          a.header__btn-download(href="#app", aria-label="Переход на главную")
+            span.header__btn-text Скачать

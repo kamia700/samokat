@@ -1,0 +1,37 @@
+doctype html
+
+include ../base/data
+include ../base/mixins
+include ../base/header
+include ../base/footer
+
+block variables
+
+html(lang="ru")
+  head
+    title= heading.title
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    meta(name="description", content=heading.description)
+
+    link(rel="preload", href="fonts/YandexSansText-Bold.woff2", as="font")
+    link(rel="preload", href="fonts/YandexSansText-Regular.woff2", as="font")
+    link(rel="preload", href="fonts/YandexSansText-Medium.woff2", as="font")
+
+    link(rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css")
+    link(rel="stylesheet", href="css/style.min.css")
+
+  body
+    +sprite()
+
+    .wrapper(class=wrapperMods)
+      if (hasHeader)
+        +header(headerMods, currentPage)
+
+      block main
+
+      if (hasFooter)
+        +footer(footerMods)
+
+    script(src="js/main.min.js")

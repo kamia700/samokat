@@ -1,0 +1,110 @@
+extends ../base/layout
+
+block variables
+  - const title = "ProjectName" //- на страницах кроме главной используйте О нас — ProjectName
+  - const wrapperMods = ""
+  - const hasHeader = true
+  - const headerMods = ""
+  - const hasFooter = true
+  - const footerMods = ""
+  - const currentPage = "main" //- для остальных страниц пишем пустую строку или индекс активного headerLinks
+
+block main
+  main
+    section.intro#intro
+      div.intro__wrap.container
+        +img("content", "intro", "png", 920, 568, "")
+        p.intro__text= intro.text
+
+    section.download-btn#download-btn
+      h2.visually-hidden Ссылка для скачивания приложения
+      .download-btn__wrap.container
+        a.download-btn__link.btn(href="#app", aria-label="Скачать приложение")
+          span.download-btn__link-text Скачать приложение
+
+    section.v-moskve#v-moskve
+      .v-moskve__wrap.container
+        h2 Пока только в Москве
+        img(src="img/svg/v-moskve.svg" width="816" alt="")
+
+    section.rent#rent
+      .rent__wrap.container
+        h2.rent__title Как арендовать самокат
+        .rent__content
+          .rent__content-left
+            each r in rent
+              .rent__left-info
+                img(src="img/svg/" + r.name width=r.width alt="")
+                p.rent__left-text= r.text
+          .rent__content-right
+            +video(video.src, 360, 720, false, true, true).rent__bg-video
+          img.rent__arrow(src="img/svg/" + img.name width=img.width alt="")
+
+    section.go#gotovo-edem
+      .go__wrap.container
+        .go__btn.btn
+          p Готово, едем! Аренда: 50 рублей + тариф от 6 рублей в минуту
+
+    section.slider#slider
+      .slider__wrap.container
+        .swiper
+          .swiper-wrapper
+            each s in slide
+              .swiper-slide
+                +video(s.src, 724, 414, true, false, false)
+          .swiper-pagination
+
+    section.gently#gently
+      .gently__wrap.container
+        .gently__bg-white
+          h2 Катайтесь нежно
+          ul
+            each g in gently
+              li.gently__item
+                +icon(g.src, g.width, g.height)
+                h3.gently__item-title= g.title
+                p.gently__item-text= g.text
+        .gently__bg-green
+          +icon(gentlyGreen.src, gentlyGreen.width, gentlyGreen.height)
+          p.gently__text Во время катания действует!{' '}
+            a(href=gentlyGreen.insurance, aria-label="базовая страховка") базовое страхование жизни
+            |
+            | и здоровья на сумму до 100 000 ₽. А ещё в приложении можно купить!{' '}
+            a(href=gentlyGreen.insurance, aria-label="расширенная страховка") расширенную страховку
+            |
+            | с покрытием до 500 000 ₽ и страхованием имущества. Если в поездке что-то произошло, сразу же пишите в поддержку.
+
+    section.plus#plus
+      .plus__wrap.container
+        +icon(plus.name, plus.width, plus.height)
+        h2= plus.title
+        p= plus.text
+
+    section.map#where
+      .map__bg-white
+        .map__wrap.container
+          h2= map.title
+          p= map.text
+          +img("content", "map", "jpg", 920, 920, "")
+
+    section.app#app
+      .app__bg-white
+        .app__wrap.container
+          .app__bg
+          .app__form-wrap.container
+            .app__left-column
+              h2= app.title
+              p= app.text
+              form.app__form(novalidate="")
+                .app__input
+                  span.app__plus +
+                  .app__input-wrap
+                    label.visually-hidden(for="tel") Телефон
+                    input.app__input-tel.tel(id="tel" name="tel" type="tel" minlength="13" placeholder="7 123 XXXXXXX" value="" autocomplete="off" required="")
+                    span.app__input-clear
+                    .app__error.error
+                      span.error__text
+                      +icon('icon-close', 24, 24)
+                .app__submit
+                  button.app__submit-btn.btn(type="submit")
+                    span Отправить
