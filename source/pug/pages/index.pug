@@ -13,6 +13,7 @@ block main
   main
     section.intro#intro
       div.intro__wrap.container
+        h2.visually-hidden Введение
         +img("content", "intro", "png", 920, 568, "")
         p.intro__text= intro.text
 
@@ -42,10 +43,12 @@ block main
 
     section.go#gotovo-edem
       .go__wrap.container
+        h2.visually-hidden Готово, едем!
         .go__btn.btn
           p Готово, едем! Аренда: 50 рублей + тариф от 6 рублей в минуту
 
     section.slider#slider
+      h2.visually-hidden Слайдер
       .slider__wrap.container
         .swiper
           .swiper-wrapper

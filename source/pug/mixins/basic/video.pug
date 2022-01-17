@@ -1,4 +1,4 @@
 mixin video(path, width, height, controls, autoplay, loop)
-  video(class!=attributes.class loop=loop controls=controls muted='' autoplay=autoplay playsinline='' webkit-playsinline='' preload='auto' width=width height=height pip='false')
+  video(class!=attributes.class loop=loop controls=controls muted='' autoplay=autoplay playsinline='' preload='auto' width=width height=height)
     source(src=path + ".mp4" type='video/mp4')
     source(src=path + ".webm" type='video/webm')
